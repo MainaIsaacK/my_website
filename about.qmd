@@ -1,0 +1,34 @@
+---
+title: "Isaac Kihara"
+about:
+    template: trestles
+    image: flower.jpg
+    image-shape: round
+    links:
+        - icon: twitter
+          text: twitter
+          href: https://twitter.com
+
+---
+
+
+
+## About Me
+
+I am a data analyst with a passion for energy consumption analysis and data visualization. I love working with Python and pandas to uncover insights from data.
+
+## Skills
+
+- Data Analysis
+- Data Visualization
+- Data cleaning with pandas
+- Python (pandas, Matplotlib, Seaborn)
+- Quarto
+- Data analysis with SQL(MySQL)
+
+## Education
+- Obtained a MySQL course at Udemy
+
+## Contact
+
+Feel free to reach out to me at [isaackkihara1997@gmail.com](mailto:email@example.com).

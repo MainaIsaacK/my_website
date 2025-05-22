@@ -1,0 +1,27 @@
+---
+title: 'Isaac Maina'
+subtitle: 'Data analyst'
+image: me.jpg
+page-layout: full
+about: 
+    template: jolla
+    image-shape: round
+    links:
+        - icon: twitter
+          text: X
+          href: https://x.com/Kiharaisaack
+---
+The world today has the potential to make better decisions and smarter investments if we take the time to let data tell its story. Each day, vast amounts of data are collected—far more than there are people to analyze it and extract meaningful insights. Fortunately, this has been accompanied by advancements in computational power, which has made data analysis a significantly simpler task than it was just a few decades ago. Now, anyone with the right skills can access and analyze data efficiently from anywhere in the world.
+
+I am a data analyst, working alongside others to help the world make more informed decisions.
+
+
+
+### Skills
+
+Data Analysis \| Data Visualization \|Data cleaning with pandas \|Python (pandas, Matplotlib, Seaborn) \| Quarto(reports, dashboards and websites) \| Data analysis with SQL(MySQL)
+
+
+
+
+

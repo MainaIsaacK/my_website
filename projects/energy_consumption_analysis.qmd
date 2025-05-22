@@ -1,0 +1,284 @@
+---
+title: "Energy consumption of a household"
+image: energy.png
+toc: true
+---
+
+
+## Introduction
+In this project, we will analyze the energy consumption of a household. The dataset contains the energy consumption of a household with a one-minute sampling rate over a period of almost 4 years. 
+
+### Columns 
+The dataset contains 8 columns, which are:
+
+1. data: the date and time of the observation
+2. Global_active_power: the total active power consumed by the household (kilowatts) 
+3. Global_reactive_power: the total reactive power consumed by the household (kvar)
+4. Voltage: the voltage consumed by the household (volts)
+5. Global_intensity: the total current consumed by the household (amps)
+6. Sub_metering_1: the current flowing in sub_metering 1 section of the house
+7. Sub_metering_2: the current flowing in sub_metering 2 section of the house
+8. Sub_metering_3: the current flowing in sub_metering 3 section of the house
+
+The dataset is available at [Kaggle](https://www.kaggle.com/datasets/robikscube/hourly-energy-consumption)
+
+## Objectives
+1. Load the dataset and check for missing values
+2. Cleaning the data.
+3. Exploration data analysis
+4. Univariate analysis
+5. Multivariate analysis
+
+**Tools Used**
+- Python libraries
+
+1. Pandas (Data parsing)
+2. Numpy (Mathematical computation)
+3. Matplotlib (Visualization)
+4. Seaborn (Visualization)
+5. Quarto (Publishing)
+
+
+## 1. Data Loading
+The downloaded csv file is imported and parsed using python's pandas module.
+
+![data_loading](Data%20cleanig%20and%20loading/loading.png)
+
+The dataset contains data about a household's power usage for a period of a few years with data collected every minute.
+
+#### Renaming the columns 
+The columns in the dataset are renamed to make it easier to understand the data
+
+![renaming the colums](Data%20cleanig%20and%20loading/renaming.png)
+
+Since no description of the data was given, I provide one. 
+![schema description](Data%20cleanig%20and%20loading/schema_description.png)
+
+The [schema description](Data%20cleanig%20and%20loading/Dataset_Description.csv) is then exported into a csv file. 
+
+#### Checking the dataset's data types
+![](Data%20cleanig%20and%20loading%20-%20Project%201/data_types.png)
+
+Only the timestamp column needs to be converted into a datetime column. The 
+rest of the columns containg numerical data.
+![changing the timestamp column into a datetime column](Data%20cleanig%20and%20loading%20-%20Project%201/timestamp_to_datetime.png)
+
+#### Checking for missing values
+![checking for null values](Data%20cleanig%20and%20loading%20-%20Project%201/null_values.png)
+
+The timestamp column does not have any missing values. 
+There are 25979 missing values in each of the remaining columns. 
+
+#### Plotting the distribution of the missing values.
+![missing values distribution](Data%20cleanig%20and%20loading%20-%20Project%201/missing_values_plot.png)
+
+Since this data is being recorded by a sensor, the missing values plot shows
+that there were times when data was not recorded. Based on the scope of this analysis, it is possible that the missing values are as a result of a power outage. The timestamp column does not have any missing values. 
+![missing values percentage](Data%20cleanig%20and%20loading%20-%20Project%201/Missing_values_percentage.png)
+
+The missing values account for 1.25% of the entire dataset so we can safely remove the missing values.
+
+![dropping the missing values](Data%20cleanig%20and%20loading%20-%20Project%201/dropping_missing_values.png)
+
+#### Adding new columns to aid in analysis
+![adding new features](Data%20cleanig%20and%20loading%20-%20Project%201/adding_features.png)
+
+New columns will be added during analysis when needed.
+
+The cleaned dataset is then exported into a new csv and analysed separately
+
+## 2. Exploratory data analysis.
+To understand the plots, the **0.25 quantile** shows the point below which 25% percent of the data points are located, the **0.75% quantile** is the point below which 75% of the data points are. The **median** is the central point of the data points, the **IQR** is the difference between the 0.75 quantile and the 0.25 quantile. If the difference is small, it indicates majority of the data points are concentrated around the median. 
+To understand the skewness of the data, if the mean is significantly greater than the median, outliers of the data are to the right, if the mean is significantly less than the median, the outliers are to the left. 
+
+### Descriptive statistics
+![Descriptive statistics](Data%20cleanig%20and%20loading%20-%20Project%201/descriptive_statistics.png)
+
+We have more than 2 million records in our dataset
+The above tables shows the descriptive statistics of each column.
+
+
+### Weekly power consumption
+![Weekly power consumption](Data%20cleanig%20and%20loading%20-%20Project%201/weekly_power.png)
+
+The above plot shows that power consumption is usually high at the beginning of each year with a downward trend of the power consumed. The downward trend reaches its lowest point at around the seventh month of each year. 
+
+### Monthly power consumption
+![monthly power consumption](Data%20cleanig%20and%20loading%20-%20Project%201/monthly_power.png)
+
+This plot shows another pattern of power consumption. In the four years data was collected, there is a similar behaviour in consumption in each month of the years. This shows a consistent power usage habit. 
+
+### Univariate analysis
+
+### 1. Active power
+![box and histogram plots of active power](Data%20cleanig%20and%20loading%20-%20Project%201/active_power.png)
+
+![descriptive statistics](Data%20cleanig%20and%20loading%20-%20Project%201/active_pwr_stats.png)
+
+The plots show that most of the active power consumed is below 2 kiloWatts.
+However, there are instances when power consumption is high with values exceeding 10 kiloWatts. 
+
+![scatter plot of average power for each hour](Data%20cleanig%20and%20loading%20-%20Project%201/active_pwer_scatter_plot.png)
+
+The above plot shows the average power consumption for each hour of the day.
+Where the dots are mostly concentrated shows a consistent power usage pattern.
+Power consumption reaches its peak from around 1800 hours to around 2200 hours. 
+
+### 2. Reactive power
+![box plot and histogram plot of the reactive power](Data%20cleanig%20and%20loading%20-%20Project%201/reactive_pwer_plot.png)
+
+![descriptive statistics of reactive power](Data%20cleanig%20and%20loading%20-%20Project%201/reactive_power_stats.png)
+
+The reactive power is as a result of the reactive elements(capacitive and inductive elements) in the circuit. The units are in kVAR. The reactive power is the power that maintains the electromagnetics fields in a circuit. The reactive power is closely related with the power factor of the circuit.
+
+The above plots most of the reactive power is below  0.5 kVAR. 
+
+![scatter plot showing the average reactive power for each hour](Data%20cleanig%20and%20loading%20-%20Project%201/react_pwr_dist_over_time.png)
+At any hour of the day, the reactive power can be expected to be more than 0.2 kVAR. However, the reactive power does go beyond 0.4 kVAR from 1000hours to around midnight. 
+
+### 3. Voltage
+![boxplot and histogram plots of the voltage](Data%20cleanig%20and%20loading%20-%20Project%201/voltage_plots.png)
+
+![descriptive statistics of voltage](Data%20cleanig%20and%20loading%20-%20Project%201/voltage_stats.png)
+
+A small IQR compared to the median and the mean indicates that the voltages is normally concentrated around the median. The voltage histogram shows a symmetrical pattern.
+There are instances when the supplied voltage is very low and very high.
+
+![scatter plot showing when variations of low and high voltages occur](Data%20cleanig%20and%20loading%20-%20Project%201/voltage_dist_over_time.png)
+
+### 4. Current
+![current plots](Data%20cleanig%20and%20loading%20-%20Project%201/current_plots.png)
+
+![current descriptive statistics](Data%20cleanig%20and%20loading%20-%20Project%201/current_stats.png)
+
+The current does show the power consumption patterns of the house since it depends on the type of load.
+The outliers are to the right, these indicates isolated times when the current drawn is high. 
+
+![average current in each hour](Data%20cleanig%20and%20loading%20-%20Project%201/current_dist_over_time.png)
+
+There is minimal current drawn from 0100 hours to around 0600 hours. Power consumption increases from 1000 hours and peaks at around 2000 hours as observed earlier. 
+
+### 5. Submetering currents
+It was observed that there are instances when the total current of the submetering sections was greater than the current drawn. This was assumed to be as a result of incorrect readings from the sensors. Since only one energy meter is supplied by the power authority, it is expected to be well calibrated to give out correct current figures. The sensors in the submetering sections are purchased separately and may not be well calibrated. 
+
+Therefore the timestamps when the total current in the submetered sections that exceed the current drawn from the energy meter were removed. 
+
+![removing subemetering currents that exceed the total current](Data%20cleanig%20and%20loading%20-%20Project%201/removing_submeter_currents.png)
+
+**Submetering 1**
+![scatter and histogram plot of submetering 1 current](Data%20cleanig%20and%20loading%20-%20Project%201/submeter_1_plots.png)
+
+![scatter plot of average current flowing in this section in each hour](Data%20cleanig%20and%20loading%20-%20Project%201/sub1_current_dist.png)
+
+The scatter plot shows this section mostly consumes alot of power from around 1800 hours to around 2100 hours.
+
+**Submetering 2**
+![box plot of the current in submetering section 2](Data%20cleanig%20and%20loading%20-%20Project%201/sub_meter2_box_plot.png)
+
+![submetering 2 descriptive statistics](Data%20cleanig%20and%20loading%20-%20Project%201/sub_meter_2_stats.png)
+
+![scatter distribution showing the average current in each hour of the day](Data%20cleanig%20and%20loading%20-%20Project%201/sub_meter_2_time_dist.png)
+
+The scatter plot shows this section generally draws a current of less than 2 amperes on average. However, there is a relatively high current drawn by this section between 1800 and 2100 hours.
+
+**Submetering 3**
+![boxplot and histogram of the current in submetering section 3](Data%20cleanig%20and%20loading%20-%20Project%201/sub_meter_3_plots.png)
+
+![Scatter plot showing the average current drawn by this section for each hour of the day](Data%20cleanig%20and%20loading%20-%20Project%201/sub_meter_3_dist_over_time.png)
+
+![submetering3 descriptive statistics](Data%20cleanig%20and%20loading%20-%20Project%201/sub_meter_3_stats.png)
+
+This is the section of the house that draws majority of the current.
+There is high power consumption between **0600** hours and **0800** hours and between **1700** hours and **2300** hours
+
+### 6. Phase angle
+We can use the active power and reactive power to compute the apparent power and hence compute the power factor and the phase angle. 
+
+![power factor and phase angle computation](Data%20cleanig%20and%20loading%20-%20Project%201/pf_calculation.png)
+
+**Phase angle**
+![boxplot and histogram of the phase angle](Data%20cleanig%20and%20loading%20-%20Project%201/phase_angle_plots.png)
+
+![phase angle descriptive statistics](Data%20cleanig%20and%20loading%20-%20Project%201/phase_angle_stats.png)
+
+![scatter plot showing the average angle in each hour of the day](Data%20cleanig%20and%20loading%20-%20Project%201/phase_angle_plot.png)
+
+The scatter plot shows that the phase angle to fluctuate to more than 30 degrees on any hour of the day. 
+I shall investagate if the fluctuation in the phase angle affects the power consumption. 
+
+## Bivariate analysis.
+### Active power and current
+![scatter plot of current and active power](Data%20cleanig%20and%20loading%20-%20Project%201/current_and_power.png)
+
+![covariance and correlation coefficient of current and active power](Data%20cleanig%20and%20loading%20-%20Project%201/corr_current_active_power.png)
+
+The show active power and the current drawn are highly correlated, an increase in one mirrors an increase in the other.
+
+### Reactive power and current
+![scatter plot of the reactive power and current](Data%20cleanig%20and%20loading%20-%20Project%201/reactive_power_and_current.png)
+
+![covariance and corr-coefficient of reactive power and current](Data%20cleanig%20and%20loading%20-%20Project%201/corr_react_power_current.png)
+
+There is a small correlation between these two variables. Since the reactive power depends on the type of load and hence the power factor, in our case a higher reactive power does not necessarily result in an increase in the current drawn.
+
+### Active power and phase angle
+![scatter plot of the active power and phase angle](Data%20cleanig%20and%20loading%20-%20Project%201/active_power_and_phase_angle.png)
+
+
+![scatter plot of the active power and the power factor](Data%20cleanig%20and%20loading%20-%20Project%201/active_power_and_pf.png)
+
+The above plot shows that the power factor is above 0.9 when there is high power consumption of above 2 kW and a power factor close to 1 when the power consumed is above 6 kW.
+
+![Histogram of active power](Data%20cleanig%20and%20loading%20-%20Project%201/active_power_hist.png)
+
+However, from the active power histogram, most of the power consumed is below 2 kW, during which the power factor can vary from 0.6 to 0.9. 
+
+### Investigating the variation in power factor.
+
+![Scatter plot of the hour of the day when the pf < 0.9 and active power <= 2kW ](Data%20cleanig%20and%20loading%20-%20Project%201/low_pf_hour_scatter.png)
+
+The above plot shows the hours between 0000hrs and 0600 hrs is when most of this variation in power factor occurs. 
+
+***Could there be sections of the house that are not submetered?***
+To answer this question, I add an extra column of the total current less the total current flowing in the submetered sections
+
+![Current difference](Data%20cleanig%20and%20loading%20-%20Project%201/current_diff.png)
+
+![Distribution of the current difference](Data%20cleanig%20and%20loading%20-%20Project%201/dist_of_curr_diff.png)
+
+The above plot shows the distribution of the current difference that is greater than zero. It shows the current that is unaccounted for. Most of this current difference is less than 4 amperes.
+
+This does confirm there are sections that are not submetered. This does not confirm whether the loads in these sections are contributing to the variation in the power factor.
+
+![Current difference and power factor](Data%20cleanig%20and%20loading%20-%20Project%201/current_diff_and_pf.png)
+
+This does not show a direct correlation between the current difference and the power factor. Since most of the current difference is below 4 amperes, this is where the data points are concentrating in the above scatter plot. 
+
+It is possible there are sections in the house that has loads that cause the phase angle to vary. This can be inferred from the current difference distribution plot and the current difference and power factor scatter plot. Most of the current that is unaccounted for if below 4 amperes and below 5 amperes is where most of the variation in the power factor occurs. 
+
+![Relationship between then reactive power and the current difference](Data%20cleanig%20and%20loading%20-%20Project%201/react_pwer_and_curr_diff.png)
+
+The above plot shows that when the current difference (current that is not accounted for) is high, there is a relatively high reactive power.
+
+### Reactive Power and Submetering sections currents.
+![Reactive power and section 1 current correlation statistics](Data%20cleanig%20and%20loading%20-%20Project%201/reactive_pwr_sect1_curr_stats.png)
+
+![Reactive power and section 2 current correlation statistics](Data%20cleanig%20and%20loading%20-%20Project%201/react_pwer_sect2_curr_stats.png)
+
+![Reactive power and section 3 current correlation statistics](Data%20cleanig%20and%20loading%20-%20Project%201/react_pwer_sect3_curr_stats.png)
+
+
+### Correlation Matrix of the variables
+![Correlation matrix of the variables](Data%20cleanig%20and%20loading%20-%20Project%201/corr_matrix.png)
+
+The correlation matrix shows the correlation coefficient between each of the variables. This coefficient is a value between -1 and 1. When the value is close to +1, it shows that a strong positive correlation between the variables.
+When the value is close to -1 it shows a strong negative correlation between the variables. Values close to 0 show weak or no correlation. A positive value shows that as one variable increases the other increases as well. When the value is negative, as one value increases the other decreases. 
+
+### Observations
+
+1. Power consumption is highest during the month of January and lowest during the month of August. These months coincide with cold and warm seasons of a year respectively.
+
+2. On any day, power consumption is high from 1500 hrs to midnight.
+
+3. There are reactive elements in the household that draw small currents. These elements cause a variation in power factor. Most of this variation in power factor occurs between 0000hrs and 0600 hrs. These reactive elements could be fluorescent lights. They have inductive elements in them that cause the current to lag the current.
+

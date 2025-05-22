@@ -1,0 +1,38 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  navbar:
+      background: primary
+      search: true
+      left: 
+       -  icon: house-fill
+          href: index.qmd
+          text: '  ' 
+      right:
+      - href: projects/Projects.qmd
+        text: "Projects"
+      tools:
+       - icon: twitter
+         href: https://x.com/Kiharaisaack
+       - icon: github
+         href: https://github.com/
+       - icon: linkedin
+         href: https://www.linkedin.com/
+      
+  page-footer: 
+    left: 'Copyright by Isaac Kihara'  
+    right: 'This website is built with Quarto'
+  page-navigation: true        
+  
+    
+    
+format:
+  html:
+    theme: flatly
+    css: styles.css
+   
+
+
+

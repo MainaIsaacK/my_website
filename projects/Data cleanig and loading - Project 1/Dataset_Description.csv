@@ -1,0 +1,7 @@
+,Columns,Description
+0,Timestamp,The date and time when each measurement was recorded
+1,Active_power(kW),The total active power actively consumed by the household at any moment
+2,Reactive_power(kVAR),"Power that does not do any useful work, accounted for by the presence of reactive components in the circuit"
+3,Voltage(V),Household supply voltage
+4,Current (I),The Current circulating in the household
+5,"Sub_metering1,2 and 3",Current flow in a section of the household
