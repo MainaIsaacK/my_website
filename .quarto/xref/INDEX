@@ -1,0 +1,20 @@
+{
+  "projects/energy_consumption_analysis.qmd": {
+    "energy_consumption_analysis.html": "40739257"
+  },
+  "about.qmd": {
+    "about.html": "c8064534"
+  },
+  "notebooks.qmd": {
+    "notebooks.html": "0a64cc3c"
+  },
+  "projects/Projects.qmd": {
+    "Projects.html": "f6a2a5ab"
+  },
+  "reports.qmd": {
+    "reports.html": "5861b99c"
+  },
+  "index.qmd": {
+    "index.html": "83ab45e2"
+  }
+}
