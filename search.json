@@ -1,5 +1,12 @@
 [
   {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Isaac Maina",
+    "section": "",
+    "text": "The world today has the potential to make better decisions and smarter investments if we take the time to let data tell its story. Each day, vast amounts of data are collected—far more than there are people to analyze it and extract meaningful insights. Fortunately, this has been accompanied by advancements in computational power, which has made data analysis a significantly simpler task than it was just a few decades ago. Now, anyone with the right skills can access and analyze data efficiently from anywhere in the world.\nI am a data analyst, working alongside others to help the world make more informed decisions.\n\nSkills\nData Analysis | Data Visualization |Data cleaning with pandas |Python (pandas, Matplotlib, Seaborn) | Quarto(reports, dashboards and websites) | Data analysis with SQL(MySQL)"
+  },
+  {
     "objectID": "projects/energy_consumption_analysis.html",
     "href": "projects/energy_consumption_analysis.html",
     "title": "Energy consumption of a household",
@@ -42,13 +49,6 @@
     "text": "Bivariate analysis.\n\nActive power and current\n\n\n\nscatter plot of current and active power\n\n\n\n\n\ncovariance and correlation coefficient of current and active power\n\n\nThe show active power and the current drawn are highly correlated, an increase in one mirrors an increase in the other.\n\n\nReactive power and current\n\n\n\nscatter plot of the reactive power and current\n\n\n\n\n\ncovariance and corr-coefficient of reactive power and current\n\n\nThere is a small correlation between these two variables. Since the reactive power depends on the type of load and hence the power factor, in our case a higher reactive power does not necessarily result in an increase in the current drawn.\n\n\nActive power and phase angle\n\n\n\nscatter plot of the active power and phase angle\n\n\n\n\n\nscatter plot of the active power and the power factor\n\n\nThe above plot shows that the power factor is above 0.9 when there is high power consumption of above 2 kW and a power factor close to 1 when the power consumed is above 6 kW.\n\n\n\nHistogram of active power\n\n\nHowever, from the active power histogram, most of the power consumed is below 2 kW, during which the power factor can vary from 0.6 to 0.9.\n\n\nInvestigating the variation in power factor.\n\n\n\nScatter plot of the hour of the day when the pf &lt; 0.9 and active power &lt;= 2kW\n\n\nThe above plot shows the hours between 0000hrs and 0600 hrs is when most of this variation in power factor occurs.\nCould there be sections of the house that are not submetered? To answer this question, I add an extra column of the total current less the total current flowing in the submetered sections\n\n\n\nCurrent difference\n\n\n\n\n\nDistribution of the current difference\n\n\nThe above plot shows the distribution of the current difference that is greater than zero. It shows the current that is unaccounted for. Most of this current difference is less than 4 amperes.\nThis does confirm there are sections that are not submetered. This does not confirm whether the loads in these sections are contributing to the variation in the power factor.\n\n\n\nCurrent difference and power factor\n\n\nThis does not show a direct correlation between the current difference and the power factor. Since most of the current difference is below 4 amperes, this is where the data points are concentrating in the above scatter plot.\nIt is possible there are sections in the house that has loads that cause the phase angle to vary. This can be inferred from the current difference distribution plot and the current difference and power factor scatter plot. Most of the current that is unaccounted for if below 4 amperes and below 5 amperes is where most of the variation in the power factor occurs.\n\n\n\nRelationship between then reactive power and the current difference\n\n\nThe above plot shows that when the current difference (current that is not accounted for) is high, there is a relatively high reactive power.\n\n\nReactive Power and Submetering sections currents.\n\n\n\nReactive power and section 1 current correlation statistics\n\n\n\n\n\nReactive power and section 2 current correlation statistics\n\n\n\n\n\nReactive power and section 3 current correlation statistics\n\n\n\n\nCorrelation Matrix of the variables\n\n\n\nCorrelation matrix of the variables\n\n\nThe correlation matrix shows the correlation coefficient between each of the variables. This coefficient is a value between -1 and 1. When the value is close to +1, it shows that a strong positive correlation between the variables. When the value is close to -1 it shows a strong negative correlation between the variables. Values close to 0 show weak or no correlation. A positive value shows that as one variable increases the other increases as well. When the value is negative, as one value increases the other decreases.\n\n\nObservations\n\nPower consumption is highest during the month of January and lowest during the month of August. These months coincide with cold and warm seasons of a year respectively.\nOn any day, power consumption is high from 1500 hrs to midnight.\nThere are reactive elements in the household that draw small currents. These elements cause a variation in power factor. Most of this variation in power factor occurs between 0000hrs and 0600 hrs. These reactive elements could be fluorescent lights. They have inductive elements in them that cause the current to lag the current."
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Isaac Maina",
-    "section": "",
-    "text": "The world today has the potential to make better decisions and smarter investments if we take the time to let data tell its story. Each day, vast amounts of data are collected—far more than there are people to analyze it and extract meaningful insights. Fortunately, this has been accompanied by advancements in computational power, which has made data analysis a significantly simpler task than it was just a few decades ago. Now, anyone with the right skills can access and analyze data efficiently from anywhere in the world.\nI am a data analyst, working alongside others to help the world make more informed decisions.\n\nSkills\nData Analysis | Data Visualization |Data cleaning with pandas |Python (pandas, Matplotlib, Seaborn) | Quarto(reports, dashboards and websites) | Data analysis with SQL(MySQL)"
-  },
-  {
     "objectID": "about.html",
     "href": "about.html",
     "title": "Isaac Kihara",
@@ -88,6 +88,6 @@
     "href": "projects/Projects.html",
     "title": "Analysis works",
     "section": "",
-    "text": "Energy consumption of a household\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNo matching items"
+    "text": "Energy consumption of a household\n\n\n\n\n\n\n\n\n\n\n\nNo matching items"
   }
 ]
