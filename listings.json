@@ -1,5 +1,11 @@
 [
   {
+    "listing": "/posts/posts.html",
+    "items": [
+      "/posts/git_and_github.html"
+    ]
+  },
+  {
     "listing": "/projects/Projects.html",
     "items": [
       "/projects/energy_consumption_analysis.html"

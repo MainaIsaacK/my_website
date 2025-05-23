@@ -1,27 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://MainaIsaacK.github.io/my_website/posts/posts.html</loc>
+    <lastmod>2025-05-23T17:50:45.942Z</lastmod>
+  </url>
+  <url>
     <loc>https://MainaIsaacK.github.io/my_website/index.html</loc>
-    <lastmod>2025-05-23T17:34:19.938Z</lastmod>
+    <lastmod>2025-05-23T17:50:45.941Z</lastmod>
   </url>
   <url>
     <loc>https://MainaIsaacK.github.io/my_website/projects/energy_consumption_analysis.html</loc>
-    <lastmod>2025-05-23T17:34:19.955Z</lastmod>
+    <lastmod>2025-05-23T17:50:45.958Z</lastmod>
   </url>
   <url>
     <loc>https://MainaIsaacK.github.io/my_website/about.html</loc>
-    <lastmod>2025-05-23T17:34:19.936Z</lastmod>
+    <lastmod>2025-05-23T17:50:45.939Z</lastmod>
   </url>
   <url>
     <loc>https://MainaIsaacK.github.io/my_website/reports.html</loc>
-    <lastmod>2025-05-23T17:34:19.955Z</lastmod>
+    <lastmod>2025-05-23T17:50:45.958Z</lastmod>
   </url>
   <url>
     <loc>https://MainaIsaacK.github.io/my_website/notebooks.html</loc>
-    <lastmod>2025-05-23T17:34:19.939Z</lastmod>
+    <lastmod>2025-05-23T17:50:45.942Z</lastmod>
   </url>
   <url>
     <loc>https://MainaIsaacK.github.io/my_website/projects/Projects.html</loc>
-    <lastmod>2025-05-23T17:34:19.954Z</lastmod>
+    <lastmod>2025-05-23T17:50:45.957Z</lastmod>
+  </url>
+  <url>
+    <loc>https://MainaIsaacK.github.io/my_website/posts/git_and_github.html</loc>
+    <lastmod>2025-05-23T17:50:45.942Z</lastmod>
   </url>
 </urlset>
