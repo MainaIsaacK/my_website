@@ -13,6 +13,8 @@ website:
       right:
       - href: projects/Projects.qmd
         text: "Projects"
+      - href: posts/posts.qmd
+        text: "Posts"
       tools:
        - icon: twitter
          href: https://x.com/Kiharaisaack
