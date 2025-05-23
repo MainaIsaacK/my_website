@@ -1,25 +1,25 @@
-name: Auto Render & Deploy Quarto Site
-
 on:
+  workflow_dispatch:
   push:
-    branches:
-      - main  # Adjust if using a different branch
+    branches: main
+
+name: Quarto Publish
 
 jobs:
   build-deploy:
     runs-on: ubuntu-latest
-
+    permissions:
+      contents: write
     steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v3
+      - name: Check out repository
+        uses: actions/checkout@v4
 
-      - name: Install Quarto
+      - name: Set up Quarto
         uses: quarto-dev/quarto-actions/setup@v2
 
-      - name: Render Quarto Site
-        run: quarto render
-
-      - name: Publish to GitHub Pages
+      - name: Render and Publish
         uses: quarto-dev/quarto-actions/publish@v2
         with:
           target: gh-pages
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
