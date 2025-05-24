@@ -25,6 +25,7 @@ website:
       
   page-footer: 
     left: 'Copyright by Isaac Kihara'  
+    center: 'maina.isaac@outlook.com'
     right: 'This website is built with Quarto'
   page-navigation: true        
   
